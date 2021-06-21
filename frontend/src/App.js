@@ -5,6 +5,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import NotebooksContainer from './components/NotebooksContainer';
+import NotesContainer from './components/NotesContainer';
 
 function App() {
   const dispatch = useDispatch();
@@ -23,6 +24,9 @@ function App() {
           </Route>
           <Route path='/notebooks'>
             <NotebooksContainer />
+          </Route>
+          <Route path='/notes'>
+            <NotesContainer />
           </Route>
         </Switch>
       )}

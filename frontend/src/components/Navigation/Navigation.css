@@ -1,0 +1,10 @@
+.nav__container {
+  height: 50px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav__section3 {
+  background-color: black;
+}

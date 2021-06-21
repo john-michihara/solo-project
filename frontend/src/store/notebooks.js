@@ -1,5 +1,3 @@
-import { csrfFetch } from "./csrf";
-
 const SET_NOTEBOOKS = 'notebooks/SET_NOTEBOOKS';
 
 const setNotebooks = (notebooks) => ({
@@ -8,7 +6,7 @@ const setNotebooks = (notebooks) => ({
 });
 
 export const getNotebooks = (userId) => async (dispatch) => {
-  const res = await csrfFetch(`/api/users/${userId}/notebooks`);
+  const res = await fetch(`/api/users/${userId}/notebooks`);
   const notebooks = await res.json();
   dispatch(setNotebooks(notebooks));
 }

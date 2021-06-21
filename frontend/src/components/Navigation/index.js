@@ -14,7 +14,6 @@ function Navigation({ isLoaded }) {
     sessionLinks = (
       <>
         <ProfileButton user={sessionUser} />
-        <NavLink to='/notebooks'>Notebooks</NavLink>
       </>
     );
   } else {
@@ -27,12 +26,31 @@ function Navigation({ isLoaded }) {
   }
 
   return (
-    <ul>
-      <li>
-        <NavLink exact to="/">Home</NavLink>
+    <nav className='nav__container'>
+      <div className='nav__section1'>
+        <button>
+          <i className="fas fa-search" />
+        </button>
+        <button>
+          <i className="fas fa-tag" />
+        </button>
+      </div>
+      <div className='nav__section2'>
+        <ul>
+          <li>
+            <NavLink exact to="/">Home</NavLink>
+            <NavLink to='/notebooks'>Notebooks</NavLink>
+            <NavLink to='/notes'>All Notes</NavLink>
+          </li>
+        </ul>
+      </div>
+      <div className='nav__section3'>
+        <button>
+          <i className="fas fa-edit" />
+        </button>
         {isLoaded && sessionLinks}
-      </li>
-    </ul>
+      </div>
+    </nav>
   );
 }
 

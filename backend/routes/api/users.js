@@ -2,8 +2,7 @@ const express = require('express');
 const asyncHandler = require('express-async-handler');
 
 const { setTokenCookie, requireAuth } = require('../../utils/auth');
-const { User } = require('../../db/models');
-const { Notebook } = require('../../db/models');
+const { User, Notebook, Note } = require('../../db/models');
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 
@@ -51,6 +50,14 @@ router.get('/:id/notebooks', asyncHandler(async (req, res) => {
     where: { userId }
   })
   res.json(notebooks);
+}));
+
+router.get('/:id/notes', asyncHandler(async (req, res) => {
+  const userId = parseInt(req.params.id, 10);
+  const notes = await Note.findAll({
+    where: { userId }
+  })
+  res.json(notes);
 }));
 
 module.exports = router;
