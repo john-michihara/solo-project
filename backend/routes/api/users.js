@@ -3,6 +3,7 @@ const asyncHandler = require('express-async-handler');
 
 const { setTokenCookie, requireAuth } = require('../../utils/auth');
 const { User } = require('../../db/models');
+const { Notebook } = require('../../db/models');
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 
@@ -43,5 +44,13 @@ router.post(
     });
   })
 );
+
+router.get('/:id/notebooks', asyncHandler(async (req, res) => {
+  const userId = parseInt(req.params.id, 10);
+  const notebooks = await Notebook.findAll({
+    where: { userId }
+  })
+  res.json(notebooks);
+}));
 
 module.exports = router;
