@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
+import NoteFormModal from '../NoteFormModal';
 import './Navigation.css';
 
 function Navigation({ isLoaded }) {
@@ -40,9 +41,7 @@ function Navigation({ isLoaded }) {
         <NavLink to='/all-notes' className='nav__link'>All Notes</NavLink>
       </div>
       <div className='nav__section3'>
-        <span className='nav__icon nav__icon--white'>
-          <i className="fas fa-edit" />
-        </span>
+        <NoteFormModal />
         {isLoaded && sessionLinks}
       </div>
     </nav>

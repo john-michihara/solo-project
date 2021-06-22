@@ -7,7 +7,7 @@ import Navigation from "./components/Navigation";
 import NotebooksContainer from './components/NotebooksContainer';
 import NotesContainer from './components/NotesContainer';
 import AllNotesContainer from "./components/AllNotesContainer";
-
+import NoteForm from './components/NoteFormModal/NoteForm.js';
 
 function App() {
   const dispatch = useDispatch();
@@ -32,6 +32,9 @@ function App() {
           </Route>
           <Route path='/notebooks/:id'>
             <NotesContainer />
+          </Route>
+          <Route path='/noteform'>
+            <NoteForm />
           </Route>
         </Switch>
       )}
