@@ -2,6 +2,7 @@ import { csrfFetch } from "./csrf";
 
 const SET_NOTEBOOKS = 'notebooks/SET_NOTEBOOKS';
 const ADD_NOTEBOOK = 'notebooks/ADD_NOTEBOOK';
+const DELETE_NOTEBOOK = 'notebooks/DELETE_NOTEBOOK';
 
 const setNotebooks = (notebooks) => ({
   type: SET_NOTEBOOKS,
@@ -12,6 +13,19 @@ const addNotebook = (notebook) => ({
   type: ADD_NOTEBOOK,
   notebook
 });
+
+const deleteNotebook = (notebook) => ({
+  type: DELETE_NOTEBOOK,
+  notebook
+})
+
+export const getNotebookToDelete = (notebookId) => async (dispatch) => {
+  const res = await csrfFetch(`/api/notebooks/${notebookId}`, {
+    method: 'DELETE'
+  });
+  const notebook = await res.json();
+  dispatch(deleteNotebook(notebook));
+};
 
 export const getNotebooks = (userId) => async (dispatch) => {
   const res = await csrfFetch(`/api/users/${userId}/notebooks`);
@@ -53,6 +67,11 @@ const notebooksReducer = (state = initialState, action) => {
         ...state,
         ...allNotebooks
       }
+
+    case DELETE_NOTEBOOK:
+      allNotebooks = { ...state };
+      delete allNotebooks[action.notebook.id]
+      return allNotebooks;
 
     default:
       return state;
