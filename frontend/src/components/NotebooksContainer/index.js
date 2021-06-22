@@ -34,6 +34,9 @@ const NotebooksContainer = () => {
               <img src={notebook.coverUrl} className='notebooks__cover' />
             </Link>
             <h2 className='notebooks__title'>{notebook.title}</h2>
+            <div>
+              <i class="fas fa-trash" />
+            </div>
           </div>
         ))}
       </div>
