@@ -1,20 +1,21 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from 'react-router-dom';
-import { getNotes } from '../../store/notes';
+import { getAllNotes } from '../../store/notes';
 
-const NotesContainer = () => {
+const AllNotesContainer = () => {
   const dispatch = useDispatch();
   const notes = useSelector(state => Object.values(state.notes));
-  const { id } = useParams();
+  const user = useSelector(state => state.session.user)
 
   useEffect(() => {
-    dispatch(getNotes(id));
+    if (user) {
+      dispatch(getAllNotes(user.id));
+    }
   }, [dispatch]);
 
   return (
     <>
-      <h1>Notes</h1>
+      <h1>All Notes</h1>
       <div>
         {notes.map(note => (
           <div key={note.id}>
@@ -27,4 +28,4 @@ const NotesContainer = () => {
   );
 };
 
-export default NotesContainer;
+export default AllNotesContainer;

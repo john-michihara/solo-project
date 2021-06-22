@@ -21,7 +21,7 @@ const NotebooksContainer = () => {
       <div className='notebooks__container'>
         {notebooks.map(notebook => (
           <div key={notebook.id} className='notebooks'>
-            <Link to='/notes'>
+            <Link to={`notebooks/${notebook.id}`}>
               <img src={notebook.coverUrl} className='notebooks__cover' />
             </Link>
             <h2 className='notebooks__title'>{notebook.title}</h2>

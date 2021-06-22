@@ -40,7 +40,7 @@ function Navigation({ isLoaded }) {
           <li>
             <NavLink exact to="/">Home</NavLink>
             <NavLink to='/notebooks'>Notebooks</NavLink>
-            <NavLink to='/notes'>All Notes</NavLink>
+            <NavLink to='/all-notes'>All Notes</NavLink>
           </li>
         </ul>
       </div>
