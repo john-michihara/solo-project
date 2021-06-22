@@ -17,7 +17,10 @@ const NotebooksContainer = () => {
 
   return (
     <>
-      <h1 className='notebooks__header'>Notebooks</h1>
+      <div className='notebooks__header'>
+        <h1 className='notebooks__header-title'>Notebooks</h1>
+        <div className='notebooks__add-notebook'>+ Notebook</div>
+      </div>
       <div className='notebooks__container'>
         {notebooks.map(notebook => (
           <div key={notebook.id} className='notebooks'>

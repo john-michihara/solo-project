@@ -36,7 +36,6 @@ function Navigation({ isLoaded }) {
         </span>
       </div>
       <div className='nav__section2'>
-        <NavLink exact to="/" className='nav__link'>Home</NavLink>
         <NavLink to='/notebooks' className='nav__link'>Notebooks</NavLink>
         <NavLink to='/all-notes' className='nav__link'>All Notes</NavLink>
       </div>

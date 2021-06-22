@@ -9,7 +9,7 @@ export const getNotebooks = (userId) => async (dispatch) => {
   const res = await fetch(`/api/users/${userId}/notebooks`);
   const notebooks = await res.json();
   dispatch(setNotebooks(notebooks));
-}
+};
 
 const initialState = {};
 
