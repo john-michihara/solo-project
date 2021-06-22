@@ -49,6 +49,7 @@ router.get('/:id/notebooks', asyncHandler(async (req, res) => {
   const notebooks = await Notebook.findAll({
     where: { userId }
   })
+
   res.json(notebooks);
 }));
 
@@ -58,6 +59,16 @@ router.get('/:id/notes', asyncHandler(async (req, res) => {
     where: { userId }
   })
   res.json(notes);
+}));
+
+router.post('/:id/notebooks', asyncHandler(async (req, res) => {
+  const userId = parseInt(req.params.id, 10);
+  const notebook = await Notebook.create({
+    userId,
+    coverUrl: 'https://images.unsplash.com/photo-1579762714453-51d9913984e2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2542&q=80'
+  });
+
+  res.json(notebook);
 }));
 
 module.exports = router;

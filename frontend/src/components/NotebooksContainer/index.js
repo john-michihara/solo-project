@@ -1,13 +1,19 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
-import { getNotebooks } from '../../store/notebooks';
+import { getNotebooks, createNotebook } from '../../store/notebooks';
 import './Notebooks.css';
 
 const NotebooksContainer = () => {
   const dispatch = useDispatch();
   const notebooks = useSelector(state => Object.values(state.notebooks));
   const user = useSelector(state => state.session.user)
+
+  const handleClick = async (e) => {
+    e.preventDefault();
+    console.log("I was clicked!")
+    await dispatch(createNotebook(user.id));
+  };
 
   useEffect(() => {
     if (user) {
@@ -19,7 +25,7 @@ const NotebooksContainer = () => {
     <>
       <div className='notebooks__header'>
         <h1 className='notebooks__header-title'>Notebooks</h1>
-        <div className='notebooks__add-notebook'>+ Notebook</div>
+        <button className='notebooks__add-notebook' onClick={e => handleClick(e)}>+ Notebook</button>
       </div>
       <div className='notebooks__container'>
         {notebooks.map(notebook => (
