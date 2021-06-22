@@ -28,26 +28,22 @@ function Navigation({ isLoaded }) {
   return (
     <nav className='nav__container'>
       <div className='nav__section1'>
-        <button>
-          <i className="fas fa-search" />
-        </button>
-        <button>
+        <span className='nav__icon'>
+          <i className="fas fa-search nav__icon" />
+        </span>
+        <span className='nav__icon'>
           <i className="fas fa-tag" />
-        </button>
+        </span>
       </div>
       <div className='nav__section2'>
-        <ul>
-          <li>
-            <NavLink exact to="/">Home</NavLink>
-            <NavLink to='/notebooks'>Notebooks</NavLink>
-            <NavLink to='/all-notes'>All Notes</NavLink>
-          </li>
-        </ul>
+        <NavLink exact to="/" className='nav__link'>Home</NavLink>
+        <NavLink to='/notebooks' className='nav__link'>Notebooks</NavLink>
+        <NavLink to='/all-notes' className='nav__link'>All Notes</NavLink>
       </div>
       <div className='nav__section3'>
-        <button>
+        <span className='nav__icon nav__icon--white'>
           <i className="fas fa-edit" />
-        </button>
+        </span>
         {isLoaded && sessionLinks}
       </div>
     </nav>

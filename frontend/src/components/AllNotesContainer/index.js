@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllNotes } from '../../store/notes';
+import './AllNotesContainer.css';
 
 const AllNotesContainer = () => {
   const dispatch = useDispatch();
@@ -16,11 +17,12 @@ const AllNotesContainer = () => {
   return (
     <>
       <h1>All Notes</h1>
-      <div>
+      <div className='notes__container'>
         {notes.map(note => (
-          <div key={note.id}>
-            <h2>{note.title}</h2>
-            <p>{note.content}</p>
+          <div key={note.id} className='notes__card'>
+            <h2 className='notes__card-title'>{note.title}</h2>
+            <p className='notes__card-content'>{note.content}</p>
+            <p className='notes__card-date'>{note.updatedAt}</p>
           </div>
         ))}
       </div>
