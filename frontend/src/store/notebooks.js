@@ -25,8 +25,6 @@ const deleteNotebook = (notebook) => ({
   notebook
 })
 
-
-
 export const getNotebooks = (userId) => async (dispatch) => {
   const res = await csrfFetch(`/api/users/${userId}/notebooks`);
   const notebooks = await res.json();
@@ -44,6 +42,7 @@ export const createNotebook = (userId) => async (dispatch) => {
 };
 
 export const getNotebookToEdit = (notebookData) => async (dispatch) => {
+  console.log(notebookData);
   const res = await csrfFetch(`/api/notebooks/${notebookData.id}`, {
     method: 'PUT',
     headers: { "Content-Type": "application/json" },

@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
 import { getNotebooks, createNotebook, getNotebookToDelete } from '../../store/notebooks';
+import NotebookFormModal from "../NotebookFormModal";
 import './Notebooks.css';
 
 const NotebooksContainer = () => {
@@ -36,9 +37,7 @@ const NotebooksContainer = () => {
               <img src={notebook.coverUrl} className='notebooks__cover' />
             </Link>
             <h2 className='notebooks__title'>{notebook.title}</h2>
-            <button>
-              <i class="fas fa-info-circle" />
-            </button>
+            <NotebookFormModal notebook={notebook} />
             <button onClick={() => handleClickDelete(notebook.id)}>
               <i class="fas fa-trash" />
             </button>
