@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from 'react-router-dom';
 import { getNotes } from '../../store/notes';
 import NoteFormModal from '../NoteFormModal';
+import './Notes.css';
 
 const NotesContainer = () => {
   const dispatch = useDispatch();
@@ -15,8 +16,10 @@ const NotesContainer = () => {
 
   return (
     <>
-      <h1>Notes</h1>
-      <NoteFormModal />
+      <div className='notes__header'>
+        <h1 className='notes__header-title'>Notes</h1>
+        <NoteFormModal />
+      </div>
       <div>
         {notes.map(note => (
           <div key={note.id}>
@@ -25,6 +28,7 @@ const NotesContainer = () => {
           </div>
         ))}
       </div>
+
     </>
   );
 };

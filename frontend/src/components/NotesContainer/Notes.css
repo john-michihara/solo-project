@@ -1,0 +1,16 @@
+.notes__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notes__header-title {
+  font-size: 25px;
+  font-weight: bold;
+  margin: 50px 0 30px 50px;
+}
+
+.notes__add-note {
+  margin: 50px 50px 30px 0;
+  font-size: 14px;
+}
