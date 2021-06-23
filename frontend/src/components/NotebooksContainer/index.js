@@ -8,6 +8,15 @@ import './Notebooks.css';
 const NotebooksContainer = () => {
   const dispatch = useDispatch();
   const notebooks = useSelector(state => Object.values(state.notebooks));
+
+  // Not sure if this is the best way to sort notebooks by updatedAt column.
+  // I wanted to add 'order: [['title', 'DESC']]' to api route but I think normalization causes it to be sorted by id again.
+  notebooks.sort(function (a, b) {
+    if (a.updatedAt < b.updatedAt) return 1;
+    if (a.updatedAt > b.updatedAt) return -1;
+    return 0;
+  });
+
   const user = useSelector(state => state.session.user)
 
   const handleClickCreate = async () => {
