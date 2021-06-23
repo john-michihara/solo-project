@@ -3,6 +3,15 @@ const router = express.Router();
 const asyncHandler = require('express-async-handler');
 const { Notebook, Note } = require('../../db/models');
 
+router.put('/:id', asyncHandler(async (req, res) => {
+  const notebookId = parseInt(req.params.id, 10);
+  const notebook = await Notebook.findByPk(notebookId);
+  if (notebook) {
+    await notebook.update(req.body.notebookData)
+  }
+  res.json(notebook);
+}));
+
 router.delete('/:id', asyncHandler(async (req, res) => {
   const notebookId = parseInt(req.params.id, 10);
   const notebook = await Notebook.findByPk(notebookId);
