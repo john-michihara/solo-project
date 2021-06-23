@@ -37,17 +37,25 @@ const NotebooksContainer = () => {
     <>
       <div className='notebooks__header'>
         <h1 className='notebooks__header-title'>Notebooks</h1>
-        <button className='notebooks__add-button' onClick={handleClickCreate}>+ Notebook</button>
+        <button
+          className='notebooks__add-button'
+          onClick={handleClickCreate}
+        >
+          + Notebook
+        </button>
       </div>
       <div className='notebooks__container'>
         {notebooks.map(notebook => (
           <div key={notebook.id} className='notebooks'>
             <Link to={`notebooks/${notebook.id}`}>
-              <img src={notebook.coverUrl} className='notebooks__cover' />
+              <div className='notebooks__cover-overlay'>
+                <img src={notebook.coverUrl}
+                  className='notebooks__cover' />
+              </div>
             </Link>
             <h2 className='notebooks__title'>{notebook.title}</h2>
             <NotebookFormModal notebook={notebook} />
-            <button onClick={() => handleClickDelete(notebook.id)}>
+            <button onClick={() => handleClickDelete(notebook.id)} className='notebooks__button'>
               <i class="fas fa-trash" />
             </button>
           </div>
