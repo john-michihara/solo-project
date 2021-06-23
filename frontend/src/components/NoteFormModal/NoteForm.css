@@ -1,0 +1,27 @@
+.note-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.note-form__input {
+  border: 1px solid black;
+  background: transparent;
+  font-size: 22px;
+  margin: 30px;
+  width: 60%;
+}
+
+.note-form__input:focus {
+  outline: none;
+}
+
+.note-form__title {
+  text-align: center;
+}
+
+.note-form__content {
+  text-align: left;
+  align-self: center;
+  width: 100%;
+}

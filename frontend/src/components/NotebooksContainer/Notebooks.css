@@ -16,9 +16,9 @@
 }
 
 .notebooks__container {
-  display: flex;
+  display: inline-flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .notebooks {

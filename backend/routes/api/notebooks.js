@@ -1,8 +1,6 @@
 const express = require('express');
 const router = express.Router();
-
 const asyncHandler = require('express-async-handler');
-
 const { Notebook, Note } = require('../../db/models');
 
 router.delete('/:id', asyncHandler(async (req, res) => {
@@ -20,6 +18,18 @@ router.get('/:id/notes', asyncHandler(async (req, res) => {
     where: { notebookId }
   });
   res.json(notes);
+}));
+
+router.post('/:id/notes', asyncHandler(async (req, res) => {
+  const { userId, notebookId, title, content } = req.body.noteData;
+  const note = await Note.create({
+    notebookId,
+    userId,
+    title,
+    content,
+    color: 'white'
+  });
+  res.json(note);
 }));
 
 
