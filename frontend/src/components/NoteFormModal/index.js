@@ -8,7 +8,7 @@ function NoteFormModal() {
   return (
     <>
       <button onClick={() => setShowModal(true)}>
-        <i className="fas fa-edit" />
+        + Note
       </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>

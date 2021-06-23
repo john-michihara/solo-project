@@ -21,8 +21,7 @@ router.get('/:id/notes', asyncHandler(async (req, res) => {
 }));
 
 router.post('/:id/notes', asyncHandler(async (req, res) => {
-  const notebookId = parseInt(req.params.id, 10);
-  const { userId, title, content } = req.body;
+  const { userId, notebookId, title, content } = req.body.noteData;
   const note = await Note.create({
     notebookId,
     userId,

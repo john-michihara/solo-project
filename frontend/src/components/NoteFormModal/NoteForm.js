@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from 'react-router-dom';
+import { createNote } from '../../store/notes';
 import './NoteForm.css';
 
 function NoteForm() {
@@ -7,14 +9,13 @@ function NoteForm() {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
 
-  const handleSubmit = (e) => {
+  const userId = useSelector(state => state.session.user.id);
+  const { notebookId } = useParams();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // return dispatch(sessionActions.login({ credential, password })).catch(
-    //   async (res) => {
-    //     const data = await res.json();
-    //     if (data && data.errors) setErrors(data.errors);
-    //   }
-    // );
+    const noteData = { title, content, notebookId, userId };
+    await dispatch(createNote(noteData));
   };
 
   return (

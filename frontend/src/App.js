@@ -30,7 +30,7 @@ function App() {
           <Route path='/all-notes'>
             <AllNotesContainer />
           </Route>
-          <Route path='/notebooks/:id'>
+          <Route exact path='/notebooks/:notebookId'>
             <NotesContainer />
           </Route>
           <Route path='/noteform'>
