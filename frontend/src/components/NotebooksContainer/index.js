@@ -36,6 +36,9 @@ const NotebooksContainer = () => {
               <img src={notebook.coverUrl} className='notebooks__cover' />
             </Link>
             <h2 className='notebooks__title'>{notebook.title}</h2>
+            <button>
+              <i class="fas fa-info-circle" />
+            </button>
             <button onClick={() => handleClickDelete(notebook.id)}>
               <i class="fas fa-trash" />
             </button>
