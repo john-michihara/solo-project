@@ -50,6 +50,7 @@ router.get('/:id/notebooks', asyncHandler(async (req, res) => {
     where: { userId }
   })
 
+  console.log(notebooks);
   res.json(notebooks);
 }));
 
