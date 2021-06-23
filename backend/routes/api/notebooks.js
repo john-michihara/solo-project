@@ -6,8 +6,13 @@ const { Notebook, Note } = require('../../db/models');
 router.put('/:id', asyncHandler(async (req, res) => {
   const notebookId = parseInt(req.params.id, 10);
   const notebook = await Notebook.findByPk(notebookId);
+  const { userId, title, coverUrl } = req.body;
   if (notebook) {
-    await notebook.update(req.body.notebookData)
+    await notebook.update({
+      userId,
+      title,
+      coverUrl
+    })
   }
   res.json(notebook);
 }));
