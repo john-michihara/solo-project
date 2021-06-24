@@ -20,13 +20,14 @@
   grid-template-columns: repeat(auto-fill, 200px);
   justify-content: space-between;
   justify-items: center;
-  margin: 0 20px;
+  margin: 0 50px;
+  column-gap: 10px;
 }
 
 .notes {
   width: 200px;
   height: 200px;
-  background-color: rgb(119, 204, 111);
+  background-color: rgb(111, 204, 204);
   margin: 20px 30px;
   animation-name: stretch;
   animation-duration: .3s;
