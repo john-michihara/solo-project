@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from 'react-router-dom';
 import { createNote } from '../../store/notes';
@@ -8,6 +8,22 @@ function NoteForm() {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
+  const [color, setColor] = useState('#ffffff');
+
+  const getRandomInt = (max) => {
+    return Math.floor(Math.random() * max);
+  };
+
+  const getColor = () => {
+    const colors = ['#fad154', '#85ecd9', '#c4ffed', '#dff590', '#dae8f0', '#ffed7e', '#ffda21', '#b3d9e6', '#d1ebb8', '#d1d9c9', '#ffdb70', '#e3e3e3', '#d5e0e3', '#ffc37d', '#bfdac2', '#ffffff'];
+
+    return colors[getRandomInt(colors.length)];
+  };
+
+  useEffect(() => {
+    setColor(getColor());
+  }, []);
+
 
   const userId = useSelector(state => state.session.user.id);
   const { notebookId } = useParams();
@@ -19,8 +35,9 @@ function NoteForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="note-form">
-      <div className='note-form__title-container'>
+    <form onSubmit={handleSubmit} className="note-form" style={{ backgroundColor: color }}>
+      <div
+        className='note-form__title-container'>
         <label>
           <input
             type="text"
