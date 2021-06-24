@@ -62,14 +62,14 @@ function NotebookForm({ notebook }) {
   return (
     <>
       <form className='notebook-form' onSubmit={handleSubmit}>
-        <h2 className="notebook-form__title">Info</h2>
 
         <div className='notebook-form__card'>
-          <div>
-            <img src={!coverUrl ? setCoverUrl(notebook.coverUrl) : coverUrl} className="notebook-form__image" />
+          <h2 className="notebook-form__title">Info</h2>
+          <div className='notebook-form__image-container'>
+            <img src={coverUrl} className="notebook-form__image" />
           </div>
-          <div>
-            <label>
+          <div className='notebook-form__inputs-container'>
+            <label> Title
               <input
                 type="text"
                 value={title}
@@ -78,7 +78,7 @@ function NotebookForm({ notebook }) {
                 className="notebook-form__input"
                 key={notebook.id}
               />
-            </label>
+            </label>Cover Link
             <label>
               <input
                 type='text'
