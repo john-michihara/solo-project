@@ -50,6 +50,11 @@ function NotebookForm({ notebook }) {
     await dispatch(getNotebookToEdit(notebookData));
   };
 
+  useEffect(() => {
+    setTitle(notebook.title);
+    setCoverUrl(notebook.coverUrl);
+  }, []);
+
   const handleClick = (e) => {
     setCoverUrl(e.target.src);
   };
@@ -67,7 +72,7 @@ function NotebookForm({ notebook }) {
             <label>
               <input
                 type="text"
-                value={!title ? setTitle(notebook.title) : title}
+                value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 required
                 className="notebook-form__input"
@@ -77,7 +82,7 @@ function NotebookForm({ notebook }) {
             <label>
               <input
                 type='text'
-                value={!coverUrl ? setCoverUrl(notebook.coverUrl) : coverUrl}
+                value={coverUrl}
                 onChange={(e) => setCoverUrl(e.target.value)}
                 required
                 className="notebook-form__input"
