@@ -34,6 +34,28 @@
   animation-timing-function: ease-out;
   animation-delay: 0s;
   animation-iteration-count: 1;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  line-height: 25px;
+}
+
+.notes__stop-overflow {
+  overflow-y: hidden;
+}
+
+.notes__title {
+  font-weight: bolder;
+}
+
+.notes__content {
+  align-self: flex-end;
+}
+
+.notes__date {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 12px;
 }
 
 @keyframes stretch {
