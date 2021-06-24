@@ -27,11 +27,13 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, 200px);
   justify-content: space-between;
-  margin-left: 50px;
+  justify-items: center;
+  margin: 0 20px;
 }
 
 .notebooks {
   align-items: center;
+  justify-content: center;
 }
 
 .notebooks__cover {
@@ -41,7 +43,7 @@
   margin: 20px 0;
   background-size: cover;
   animation-name: stretch;
-  animation-duration: .1s;
+  animation-duration: .3s;
   animation-timing-function: ease-out;
   animation-delay: 0s;
   animation-iteration-count: 1;
@@ -79,6 +81,11 @@
 
 .notebooks__cover-overlay:hover:after {
   opacity: 1;
+}
+
+.notebooks__title {
+  margin-top: 30px;
+  text-align: center;
 }
 
 .notebooks__button {
