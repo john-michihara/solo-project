@@ -27,22 +27,23 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, 200px);
   justify-content: space-between;
+  justify-items: center;
+  margin: 0 20px;
 }
 
 .notebooks {
-  display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .notebooks__cover {
-  height: 200px;
-  width: 145px;
+  height: 100%;
+  width: 100%;
   border-radius: 0 10px 10px 0;
   margin: 20px 0;
   background-size: cover;
   animation-name: stretch;
-  animation-duration: .1s;
+  animation-duration: .3s;
   animation-timing-function: ease-out;
   animation-delay: 0s;
   animation-iteration-count: 1;
@@ -57,4 +58,42 @@
     height: 200px;
     width: 145px;
   }
+}
+
+.notebooks__cover-overlay {
+  position: relative;
+  height: 200px;
+  width: 145px;
+}
+
+.notebooks__cover-overlay:after {
+  content: '\A';
+  position: absolute;
+  width: 100%;
+  height:100%;
+  top: 20px;
+  left: 0;
+  background:rgba(0,0,0,0.6);
+  border-radius: 0 10px 10px 0;
+  opacity: 0;
+  transition: all .5s;
+}
+
+.notebooks__cover-overlay:hover:after {
+  opacity: 1;
+}
+
+.notebooks__title {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.notebooks__button {
+  position: relative;
+  bottom: 70px;
+  left: 70px;
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-size: 30px;
 }
