@@ -51,4 +51,12 @@
   padding: 30px 0;
 }
 
-
+.notebooks__edit {
+  position: relative;
+  bottom: 220px;
+  left: 100px;
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-size: 30px;
+}

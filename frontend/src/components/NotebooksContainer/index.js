@@ -56,7 +56,7 @@ const NotebooksContainer = () => {
             <h2 className='notebooks__title'>{notebook.title}</h2>
             <NotebookFormModal notebook={notebook} />
             <button onClick={() => handleClickDelete(notebook.id)} className='notebooks__button'>
-              <i class="fas fa-trash" />
+              <i className="fas fa-trash" />
             </button>
           </div>
         ))}
