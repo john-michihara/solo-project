@@ -36,13 +36,13 @@ router.get('/:id/notes', asyncHandler(async (req, res) => {
 
 router.post('/:id/notes', asyncHandler(async (req, res) => {
 
-  const { userId, notebookId, title, content } = req.body.noteData;
+  const { userId, notebookId, title, content, color } = req.body.noteData;
   const note = await Note.create({
     notebookId,
     userId,
     title,
     content,
-    color: 'white'
+    color
   });
   res.json(note);
 }));

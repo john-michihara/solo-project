@@ -30,7 +30,7 @@ function NoteForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const noteData = { title, content, notebookId, userId };
+    const noteData = { title, content, notebookId, userId, color };
     await dispatch(createNote(noteData));
   };
 

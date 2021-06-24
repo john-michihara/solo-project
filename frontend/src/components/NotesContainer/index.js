@@ -37,7 +37,7 @@ const NotesContainer = () => {
       </div>
       <div className='notes__container'>
         {notes.map(note => (
-          <div key={note.id} className='notes'>
+          <div key={note.id} className='notes' style={{ backgroundColor: note.color }}>
             <div className='notes__stop-overflow'>
               <div className='notes__title'>{note.title}</div>
               <div className='notes__content'>{note.content}</div>
