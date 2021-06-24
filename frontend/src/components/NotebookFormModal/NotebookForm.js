@@ -32,7 +32,7 @@ const coverUrls = [
   'https://images.unsplash.com/photo-1525498128493-380d1990a112?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=80'
 ];
 
-function NoteForm({ notebook }) {
+function NotebookForm({ notebook }) {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
   const [coverUrl, setCoverUrl] = useState('');
@@ -47,7 +47,6 @@ function NoteForm({ notebook }) {
       id: notebook.id,
       userId
     };
-    console.log(notebookData);
     await dispatch(getNotebookToEdit(notebookData));
   };
 
@@ -106,4 +105,4 @@ function NoteForm({ notebook }) {
   );
 }
 
-export default NoteForm;
+export default NotebookForm;
