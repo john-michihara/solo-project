@@ -20,11 +20,11 @@ const NotesContainer = () => {
         <h1 className='notes__header-title'>Notes</h1>
         <NoteFormModal />
       </div>
-      <div>
+      <div className='notes__container'>
         {notes.map(note => (
-          <div key={note.id}>
-            <h2>{note.title}</h2>
-            <p>{note.content}</p>
+          <div key={note.id} className='notes'>
+            <h2 className='notes__title'>{note.title}</h2>
+            <p className='notes__content'>{note.content}</p>
           </div>
         ))}
       </div>

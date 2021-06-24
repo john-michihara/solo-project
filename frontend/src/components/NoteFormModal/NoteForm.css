@@ -1,15 +1,31 @@
 .note-form {
+  position: fixed;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 15%;
+  right: 15%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation-name: slideUp;
+  animation-duration: .4s;
+}
+
+@keyframes slideUp {
+  from {
+    top: 100vh;
+  }
+
+  to {
+    top: 0;
+  }
 }
 
 .note-form__input {
-  border: 1px solid black;
+  border: none;
   background: transparent;
   font-size: 22px;
-  margin: 30px;
-  width: 60%;
 }
 
 .note-form__input:focus {
@@ -18,10 +34,49 @@
 
 .note-form__title {
   text-align: center;
+  font-weight: bolder;
+  margin: 15px 0;
+}
+
+.note-form__toolbar {
+  display: flex;
+  width: 75%;
+  justify-content: space-around;
+  margin-bottom: 30px;
+  flex-grow: 1;
+}
+
+.note-form__editor {
+  padding: 5px;
+  margin: 5px;
+  font-size: 18px;
+}
+
+.note-form__editor:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+
+.note-form__content-container {
+  background-color: white;
+  width: 80%;
+  height: 80%;
 }
 
 .note-form__content {
   text-align: left;
-  align-self: center;
   width: 100%;
+  height: 100%;
+  vertical-align: text-top;
+  padding-bottom: 70%;
+  font-size: 18px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.notes__button {
+  margin: 40px 50px 10px 0;
+  font-size: 16px;
+  border: none;
+  padding: 10px;
+  background-color: transparent;
 }

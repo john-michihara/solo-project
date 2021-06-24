@@ -1,3 +1,5 @@
+import { csrfFetch } from "./csrf";
+
 const SET_NOTES = 'notebooks/SET_NOTES';
 const SET_ALL_NOTES = 'notebooks/SET_ALL_NOTES';
 const ADD_NOTE = 'notebooks/ADD_NOTE';
@@ -18,19 +20,19 @@ const addNote = (note) => ({
 });
 
 export const getNotes = (notebookId) => async (dispatch) => {
-  const res = await fetch(`/api/notebooks/${notebookId}/notes`);
+  const res = await csrfFetch(`/api/notebooks/${notebookId}/notes`);
   const notes = await res.json();
   dispatch(setNotes(notes));
 };
 
 export const getAllNotes = (userId) => async (dispatch) => {
-  const res = await fetch(`/api/users/${userId}/notes`);
+  const res = await csrfFetch(`/api/users/${userId}/notes`);
   const notes = await res.json();
   dispatch(setAllNotes(notes));
 };
 
 export const createNote = (noteData) => async (dispatch) => {
-  const res = await fetch(`/api/notebooks/${noteData.notebookId}/notes`, {
+  const res = await csrfFetch(`/api/notebooks/${noteData.notebookId}/notes`, {
     method: 'POST',
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ noteData })
