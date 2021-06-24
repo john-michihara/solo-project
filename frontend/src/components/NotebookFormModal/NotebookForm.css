@@ -6,7 +6,6 @@
  border-radius: 5px;
  animation-duration: .4s;
  animation-name: slideIn;
- overflow: scroll;
 }
 
 @keyframes slideIn {
