@@ -50,6 +50,11 @@ function NotebookForm({ notebook }) {
     await dispatch(getNotebookToEdit(notebookData));
   };
 
+  useEffect(() => {
+    setTitle(notebook.title);
+    setCoverUrl(notebook.coverUrl);
+  }, []);
+
   const handleClick = (e) => {
     setCoverUrl(e.target.src);
   };
@@ -57,27 +62,27 @@ function NotebookForm({ notebook }) {
   return (
     <>
       <form className='notebook-form' onSubmit={handleSubmit}>
-        <h2 className="notebook-form__title">Info</h2>
 
         <div className='notebook-form__card'>
-          <div>
-            <img src={!coverUrl ? setCoverUrl(notebook.coverUrl) : coverUrl} className="notebook-form__image" />
+          <h2 className="notebook-form__title">Info</h2>
+          <div className='notebook-form__image-container'>
+            <img src={coverUrl} className="notebook-form__image" />
           </div>
-          <div>
-            <label>
+          <div className='notebook-form__inputs-container'>
+            <label> Title
               <input
                 type="text"
-                value={!title ? setTitle(notebook.title) : title}
+                value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 required
                 className="notebook-form__input"
                 key={notebook.id}
               />
-            </label>
+            </label>Cover Link
             <label>
               <input
                 type='text'
-                value={!coverUrl ? setCoverUrl(notebook.coverUrl) : coverUrl}
+                value={coverUrl}
                 onChange={(e) => setCoverUrl(e.target.value)}
                 required
                 className="notebook-form__input"

@@ -1,12 +1,13 @@
 .notebook-form {
  position: fixed;
  background-color: white;
- top: 0;
- right: 0;
  border-radius: 5px;
+ overflow-y: scroll;
+ top: 0;
+ bottom: 0;
+ right: 0;
  animation-duration: .4s;
  animation-name: slideIn;
- overflow: scroll;
 }
 
 @keyframes slideIn {
@@ -19,21 +20,39 @@
   }
 }
 
+.notebook-form__card {
+  display: grid;
+  justify-content: space-around;
+  position: sticky;
+  top:0;
+  background-color: white;
+  justify-items: center;
+  grid-template-areas:
+    "title title"
+    "image inputs"
+}
+
 .notebook-form__title {
   font-size: 24px;
   padding: 20px 200px 40px 200px;
+  display: inline-block;
+  grid-area: title;
 }
 
-.notebook-form__card {
-  display: flex;
-  justify-content: space-around;
-  padding: 40px;
+.notebook-form__image-container {
+  grid-area: image;
+  padding: 0 0 30px 30px;
 }
 
 .notebook-form__image {
   height: 200px;
   width: 145px;
   border-radius: 0 10px 10px 0;
+}
+
+.notebook-form__inputs-container {
+  grid-area: inputs;
+  padding: 15px;
 }
 
 .notebook-form__input {
@@ -51,4 +70,12 @@
   padding: 30px 0;
 }
 
-
+.notebooks__edit {
+  position: relative;
+  bottom: 220px;
+  left: 100px;
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-size: 30px;
+}
