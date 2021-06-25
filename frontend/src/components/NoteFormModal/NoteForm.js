@@ -39,14 +39,18 @@ function NoteForm() {
     <form onSubmit={handleSubmit} className="note-form" style={{ backgroundColor: color }}>
       <div
         className='note-form__title-container'>
-        <label>
-          <input
-            type="text"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            className='note-form__input note-form__title'
-          />
-        </label>
+        <button type="submit" className='note-form__submit-button hidden'>
+          <i className="fas fa-check" />
+        </button>
+        <input
+          type="text"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          className='note-form__input note-form__title'
+        />
+        <button type="submit" className='note-form__submit-button'>
+          <i className="fas fa-check" />
+        </button>
       </div>
 
       <div className='note-form__toolbar'>
@@ -121,7 +125,7 @@ function NoteForm() {
         </label>
       </div>
 
-      <button type="submit" className='note-form__button'>Submit</button>
+
 
     </form>
   );
