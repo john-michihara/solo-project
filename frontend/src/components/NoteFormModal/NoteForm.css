@@ -78,6 +78,12 @@
   font-size: 16px;
   border: none;
   background-color: transparent;
+  padding: 10px;
+}
+
+.notes__button:hover {
+  background-color: rgb(235, 235, 235);
+  border-radius: 5px;
 }
 
 .note-form__color-input {
