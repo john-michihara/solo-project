@@ -1,17 +1,21 @@
 .notes__header {
   display: flex;
+  padding: 50px 50px 10px 50px;
   justify-content: space-between;
   align-items: center;
+}
+
+.notes__back {
+  font-size: 25px;
 }
 
 .notes__header-title {
   font-size: 25px;
   font-weight: bold;
-  margin: 50px 0 30px 50px;
+  margin-left: 15px;
 }
 
 .notes__add-note {
-  margin: 50px 50px 30px 0;
   font-size: 14px;
 }
 

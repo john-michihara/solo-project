@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { getNotes } from '../../store/notes';
 import NoteFormModal from '../NoteFormModal';
 import './Notes.css';
@@ -32,7 +32,12 @@ const NotesContainer = () => {
   return (
     <>
       <div className='notes__header'>
-        <h1 className='notes__header-title'>Notes</h1>
+        <div>
+          <Link to='/notebooks' className='notes__back'>
+            <i className="fas fa-arrow-left" />
+          </Link>
+          <span className='notes__header-title'>Notes</span>
+        </div>
         <NoteFormModal />
       </div>
       <div className='notes__container'>
