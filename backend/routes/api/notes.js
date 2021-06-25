@@ -3,7 +3,7 @@ const router = express.Router();
 const asyncHandler = require('express-async-handler');
 const { Note } = require('../../db/models');
 
-router.post('/:id', asyncHandler(async (req, res) => {
+router.put('/:id', asyncHandler(async (req, res) => {
   const noteId = parseInt(req.params.id, 10);
   const note = await Note.findByPk(noteId);
   const { title, content, color } = req.body.noteData;
@@ -13,8 +13,10 @@ router.post('/:id', asyncHandler(async (req, res) => {
       title,
       content,
       color
-    })
+    });
   }
+
+  res.json(note);
 }));
 
 router.delete('/:id', asyncHandler(async (req, res) => {

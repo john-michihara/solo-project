@@ -3,7 +3,8 @@ import { csrfFetch } from "./csrf";
 const SET_NOTES = 'notes/SET_NOTES';
 const SET_ALL_NOTES = 'notes/SET_ALL_NOTES';
 const ADD_NOTE = 'notes/ADD_NOTE';
-const DELETE_NOTE = 'notes/DELETE_NOTE'
+const EDIT_NOTE = 'notes/EDIT_NOTE';
+const DELETE_NOTE = 'notes/DELETE_NOTE';
 
 const setNotes = (notes) => ({
   type: SET_NOTES,
@@ -19,6 +20,11 @@ const addNote = (note) => ({
   type: ADD_NOTE,
   note
 });
+
+const editNote = (note) => ({
+  type: EDIT_NOTE,
+  note
+})
 
 const deleteNote = (note) => ({
   type: DELETE_NOTE,
@@ -46,7 +52,19 @@ export const createNote = (noteData) => async (dispatch) => {
 
   const note = await res.json();
   dispatch(addNote(note));
-}
+};
+
+export const getNoteToEdit = (noteData) => async (dispatch) => {
+  const res = await csrfFetch(`/api/notes/${noteData.id}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ noteData })
+  });
+
+  const note = await res.json();
+  console.log('$$$$$$$$$$$$$$$$$$$$$$$$$$$$', note);
+  dispatch(editNote(note));
+};
 
 export const getNoteToDelete = (noteId) => async (dispatch) => {
   const res = await csrfFetch(`/api/notes/${noteId}`, {
@@ -90,7 +108,13 @@ const notesReducer = (state = initialState, action) => {
       return {
         ...state,
         ...newState
-      }
+      };
+
+    case EDIT_NOTE:
+      newState = { ...state };
+      newState[action.note.id] = action.note;
+
+      return newState;
 
     case DELETE_NOTE:
       newState = { ...state };

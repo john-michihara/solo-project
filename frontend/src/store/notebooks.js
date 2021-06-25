@@ -42,7 +42,6 @@ export const createNotebook = (userId) => async (dispatch) => {
 };
 
 export const getNotebookToEdit = (notebookData) => async (dispatch) => {
-  console.log(notebookData);
   const res = await csrfFetch(`/api/notebooks/${notebookData.id}`, {
     method: 'PUT',
     headers: { "Content-Type": "application/json" },
