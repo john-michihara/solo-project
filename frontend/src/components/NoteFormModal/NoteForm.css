@@ -38,12 +38,19 @@
   margin: 15px 0;
 }
 
+.note-form__title-container {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+}
+
 .note-form__toolbar {
   display: flex;
   width: 75%;
   justify-content: space-around;
   margin-bottom: 30px;
   flex-grow: 1;
+  align-items: center;
 }
 
 .note-form__editor {
@@ -58,7 +65,7 @@
 }
 
 .note-form__content-container {
-  background-color: white;
+  background-color: transparent;
   width: 80%;
   height: 80%;
 }
@@ -74,9 +81,36 @@
 }
 
 .notes__button {
-  margin: 40px 50px 10px 0;
   font-size: 16px;
   border: none;
-  padding: 10px;
   background-color: transparent;
+  padding: 10px;
+}
+
+.note-form__submit-button {
+  border: none;
+  background-color: transparent;
+  padding: none;
+  font-size: 25px;
+  color: black;
+}
+
+.note-form__submit-button:hover {
+  color: green;
+}
+
+.notes__button:hover {
+  background-color: rgb(235, 235, 235);
+  border-radius: 5px;
+}
+
+.note-form__color-input {
+  border: transparent;
+  padding: 0;
+  height: 25px;
+  background-color: transparent;
+}
+
+.hidden {
+  visibility: hidden;
 }
