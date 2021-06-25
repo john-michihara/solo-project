@@ -62,7 +62,6 @@ export const getNoteToEdit = (noteData) => async (dispatch) => {
   });
 
   const note = await res.json();
-  console.log('$$$$$$$$$$$$$$$$$$$$$$$$$$$$', note);
   dispatch(editNote(note));
 };
 

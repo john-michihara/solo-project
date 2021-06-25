@@ -1,5 +1,5 @@
 {
-  "name": "w15d4-authenticate-me-project",
+  "name": "solo-project",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -14,13 +14,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/john-michihara/authenticate-me.git"
+    "url": "git+https://github.com/john-michihara/solo-project.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/john-michihara/authenticate-me/issues"
+    "url": "https://github.com/john-michihara/solo-project/issues"
   },
-  "homepage": "https://github.com/john-michihara/authenticate-me#readme"
+  "homepage": "https://github.com/john-michihara/solo-project#readme"
 }
