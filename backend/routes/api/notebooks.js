@@ -35,7 +35,6 @@ router.get('/:id/notes', asyncHandler(async (req, res) => {
 }));
 
 router.post('/:id/notes', asyncHandler(async (req, res) => {
-
   const { userId, notebookId, title, content, color } = req.body.noteData;
   const note = await Note.create({
     notebookId,
