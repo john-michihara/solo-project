@@ -99,6 +99,15 @@ function NoteForm() {
           </span>
         </div>
 
+        <div>
+          <input
+            type='color'
+            value={color}
+            onChange={(e) => setColor(e.target.value)}
+            className="note-form__color-input"
+          />
+        </div>
+
       </div>
 
       <div className='note-form__content-container'>
@@ -107,7 +116,6 @@ function NoteForm() {
             type="text"
             value={content}
             onChange={(e) => setContent(e.target.value)}
-            required
             className='note-form__input note-form__content'
             autoFocus
           />
