@@ -6,11 +6,15 @@ import NoteFormModal from '../NoteFormModal';
 import EditNoteFormModal from '../EditNoteFormModal';
 import './Notes.css';
 import dateFormat from 'dateformat';
+import { getNotebooks } from "../../store/notebooks";
 
 const NotesContainer = () => {
   const dispatch = useDispatch();
   const notes = useSelector(state => Object.values(state.notes));
+  const notebooks = useSelector(state => state.notebooks);
   const { notebookId } = useParams();
+  const notebook = notebooks[notebookId];
+  const user = useSelector(state => state.session.user)
 
   notes.sort(function (a, b) {
     if (a.updatedAt < b.updatedAt) return 1;
@@ -32,6 +36,7 @@ const NotesContainer = () => {
 
   useEffect(() => {
     dispatch(getNotes(notebookId));
+    dispatch(getNotebooks(user.id));
   }, [dispatch]);
 
   return (
@@ -41,7 +46,7 @@ const NotesContainer = () => {
           <Link to='/notebooks' className='notes__back'>
             <i className="fas fa-arrow-left" />
           </Link>
-          <span className='notes__header-title'>Notes</span>
+          <span className='notes__header-title'>{notebook ? notebook.title : 'Notes'}</span>
         </div>
         <NoteFormModal />
       </div>
