@@ -8,6 +8,7 @@ import NotebooksContainer from './components/NotebooksContainer';
 import NotesContainer from './components/NotesContainer';
 import AllNotesContainer from "./components/AllNotesContainer";
 import NoteForm from './components/NoteFormModal/NoteForm.js';
+import LandingPage from './components/LandingPage';
 
 function App() {
   const dispatch = useDispatch();
@@ -22,6 +23,9 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
+          <Route exact path='/'>
+            <LandingPage />
+          </Route>
           <Route path="/signup">
             <SignupFormPage />
           </Route>

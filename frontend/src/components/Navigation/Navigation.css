@@ -22,7 +22,8 @@
 }
 
 .nav__section3 {
-  background-color: black;
+  background-color: transparent;
+  padding: 5px 20px 5px 0;
 }
 
 .nav__icon {
@@ -32,4 +33,19 @@
 
 .nav__icon--white {
   color: white;
+}
+
+.nav__account-icon {
+  background-color: rgb(36, 139, 67);
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  font-size: 30px;
+  vertical-align: middle;
+  color: white;
+  cursor: pointer;
+}
+
+.nav__account-icon:hover {
+  background-color: rgb(46, 175, 85);
 }
