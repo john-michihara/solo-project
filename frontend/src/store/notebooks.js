@@ -97,7 +97,7 @@ const notebooksReducer = (state = initialState, action) => {
 
     case DELETE_NOTEBOOK:
       allNotebooks = { ...state };
-      delete allNotebooks[action.notebook.id]
+      delete allNotebooks[action.notebook.id];
       return allNotebooks;
 
     default:

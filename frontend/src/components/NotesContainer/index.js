@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, Link } from 'react-router-dom';
-import { getNotes } from '../../store/notes';
+import { getNotes, getNoteToDelete } from '../../store/notes';
 import NoteFormModal from '../NoteFormModal';
 import './Notes.css';
 import dateFormat from 'dateformat';
@@ -25,6 +25,10 @@ const NotesContainer = () => {
     }
   };
 
+  const handleClickDelete = async (noteId) => {
+    await dispatch(getNoteToDelete(noteId));
+  }
+
   useEffect(() => {
     dispatch(getNotes(notebookId));
   }, [dispatch]);
@@ -47,7 +51,12 @@ const NotesContainer = () => {
               <div className='notes__title'>{note.title}</div>
               <div className='notes__content'>{note.content}</div>
             </div>
-            <div className='notes__date'>{calcDate(note.updatedAt)}</div>
+            <div>
+              <div className='notes__date'>{calcDate(note.updatedAt)}</div>
+              <button onClick={() => handleClickDelete(note.id)}>
+                <i className="fas fa-trash" />
+              </button>
+            </div>
           </div>
         ))}
       </div>
