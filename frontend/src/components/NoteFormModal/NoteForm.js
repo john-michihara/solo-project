@@ -22,6 +22,7 @@ function NoteForm() {
 
   useEffect(() => {
     setColor(getColor());
+    setTitle('Title')
   }, []);
 
 
@@ -43,8 +44,6 @@ function NoteForm() {
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            required
-            placeholder="Title"
             className='note-form__input note-form__title'
           />
         </label>
