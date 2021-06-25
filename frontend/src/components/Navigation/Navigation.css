@@ -43,6 +43,7 @@
   font-size: 30px;
   vertical-align: middle;
   color: white;
+  cursor: pointer;
 }
 
 .nav__account-icon:hover {
