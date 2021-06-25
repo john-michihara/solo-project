@@ -31,9 +31,9 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      <button onClick={openMenu}>
-        <i className="fas fa-user-circle" />
-      </button>
+      {/* <div onClick={logout} className='nav__account-icon'>
+        {user ? user.username[0].toLowerCase() : '?'}
+      </div> */}
       {showMenu && (
         <ul className="profile-dropdown">
           <li>{user.username}</li>

@@ -1,0 +1,59 @@
+.account__modal {
+  position: fixed;
+  background-color: white;
+  border-radius: 5px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  animation-duration: .4s;
+  animation-name: slideIn;
+}
+
+@keyframes slideIn {
+  from {
+    right: -100vh;
+  }
+
+  to {
+    right: 0;
+  }
+}
+
+.account__card {
+  width: 400px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.account__icon {
+  background-color: rgb(36, 139, 67);
+  height: 70px;
+  width: 70px;
+  text-align: center;
+  vertical-align: middle;
+  color: white;
+  font-size: 54px;
+  border-radius: 10px;
+  margin: 80px 0 10px 0;
+}
+
+.account__username {
+  font-weight: bold;
+}
+
+.account__signout-btn {
+  width: 90px;
+  border: none;
+  background-color: rgb(224, 224, 224);
+  padding: 6px ;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 50px;
+  border-radius: 5px;
+}
+
+.account__details {
+  background-color: rgb(230, 230, 230);
+  height: 100%;
+}

@@ -1,12 +1,13 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { getNotebooks, createNotebook, getNotebookToDelete } from '../../store/notebooks';
 import NotebookFormModal from "../NotebookFormModal";
 import './Notebooks.css';
 
 const NotebooksContainer = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const notebooks = useSelector(state => Object.values(state.notebooks));
 
   // Not sure if this is the best way to sort notebooks by updatedAt column.
@@ -18,6 +19,7 @@ const NotebooksContainer = () => {
   });
 
   const user = useSelector(state => state.session.user)
+  if (!user) history.push('/');
 
   const handleClickCreate = async () => {
     await dispatch(createNotebook(user.id));

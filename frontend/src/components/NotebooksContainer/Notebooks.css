@@ -42,14 +42,14 @@
   border-radius: 0 10px 10px 0;
   margin: 20px 0;
   background-size: cover;
-  animation-name: stretch;
+  /* animation-name: stretch;
   animation-duration: .2s;
   animation-timing-function: linear;
   animation-delay: 0s;
-  animation-iteration-count: 1;
+  animation-iteration-count: 1; */
 }
 
-@keyframes stretch {
+/* @keyframes stretch {
   0% {
     height: 0;
     width: 0;
@@ -58,7 +58,7 @@
     height: 200px;
     width: 145px;
   }
-}
+} */
 
 .notebooks__cover-overlay {
   position: relative;
