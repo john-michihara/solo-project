@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams, Link } from 'react-router-dom';
 import { getNotes, getNoteToDelete } from '../../store/notes';
 import NoteFormModal from '../NoteFormModal';
+import EditNoteFormModal from '../EditNoteFormModal';
 import './Notes.css';
 import dateFormat from 'dateformat';
 
@@ -53,6 +54,7 @@ const NotesContainer = () => {
             </div>
             <div>
               <div className='notes__date'>{calcDate(note.updatedAt)}</div>
+              <EditNoteFormModal note={note} />
               <button onClick={() => handleClickDelete(note.id)}>
                 <i className="fas fa-trash" />
               </button>
