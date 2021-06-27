@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { getNotebooks } from '../../store/notebooks';
 import { getAllNotes } from '../../store/notes';
 import SearchBar from './SearchBar';
@@ -13,8 +14,10 @@ const SearchPage = () => {
   const [notes, setNotes] = useState([]);
 
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const user = useSelector(state => state.session.user);
+  if (!user) history.push('/');
 
   const fetchData = async () => {
     const notebooksData = await dispatch(getNotebooks(user.id));

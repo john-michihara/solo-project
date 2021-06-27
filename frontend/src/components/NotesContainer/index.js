@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useHistory } from 'react-router-dom';
 import { getNotes, getNoteToDelete } from '../../store/notes';
 import NoteFormModal from '../NoteFormModal';
 import EditNoteFormModal from '../EditNoteFormModal';
@@ -10,11 +10,14 @@ import { getNotebooks } from "../../store/notebooks";
 
 const NotesContainer = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const notes = useSelector(state => Object.values(state.notes));
   const notebooks = useSelector(state => state.notebooks);
   const { notebookId } = useParams();
   const notebook = notebooks[notebookId];
-  const user = useSelector(state => state.session.user)
+  const user = useSelector(state => state.session.user);
+
+  if (!user) history.push('/');
 
   notes.sort(function (a, b) {
     if (a.updatedAt < b.updatedAt) return 1;
