@@ -18,7 +18,13 @@
   background-color: black;
   color: white;
   border-radius: 5px;
+  padding: 5px;
+}
 
+.nav__section1 {
+  background-color: transparent;
+  padding: 15px 20px 10px 0;
+  margin-left: 20px;
 }
 
 .nav__section3 {
@@ -28,7 +34,11 @@
 
 .nav__icon {
   font-size: 20px;
-  padding: 15px 10px;
+  padding: 0;
+}
+
+.nav__icon-tag {
+  margin-left: 20px;
 }
 
 .nav__icon--white {
