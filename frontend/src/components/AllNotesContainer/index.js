@@ -33,7 +33,7 @@ const AllNotesContainer = () => {
     if (user) {
       dispatch(getAllNotes(user.id));
     }
-  }, [dispatch]);
+  }, [dispatch, user]);
 
   return (
     <>

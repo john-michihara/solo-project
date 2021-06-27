@@ -9,6 +9,7 @@ import NotesContainer from './components/NotesContainer';
 import AllNotesContainer from "./components/AllNotesContainer";
 import NoteForm from './components/NoteFormModal/NoteForm.js';
 import LandingPage from './components/LandingPage';
+import SearchPage from './components/SearchPage';
 
 function App() {
   const dispatch = useDispatch();
@@ -25,6 +26,9 @@ function App() {
         <Switch>
           <Route exact path='/'>
             <LandingPage />
+          </Route >
+          <Route path='/search'>
+            <SearchPage />
           </Route>
           <Route path="/signup">
             <SignupFormPage />

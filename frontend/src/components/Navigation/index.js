@@ -18,9 +18,11 @@ function Navigation({ isLoaded }) {
         <nav className='nav__container'>
           {isLoaded && sessionLinks}
           <div className='nav__section1'>
-            <span className='nav__icon'>
-              <i className="fas fa-search nav__icon" />
-            </span>
+            <NavLink to='/search'>
+              <span className='nav__icon'>
+                <i className="fas fa-search nav__icon" />
+              </span>
+            </NavLink>
             <span className='nav__icon'>
               <i className="fas fa-tag" />
             </span>
