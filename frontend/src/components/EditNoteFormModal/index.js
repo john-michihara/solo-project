@@ -17,12 +17,12 @@ function EditNoteFormModal({ note }) {
 
   return (
     <>
-      <button onClick={openModal} className='edit-note__edit'>
+      <button onClick={openModal} className='notes__button'>
         <i className="fas fa-info-circle" />
       </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <EditNoteForm note={note} />
+          <EditNoteForm note={note} setShowModal={setShowModal} />
         </Modal>
       )}
     </>

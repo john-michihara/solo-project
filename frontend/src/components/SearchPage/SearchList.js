@@ -36,10 +36,10 @@ const SearchList = ({ notebooks = [], notes = [] }) => {
                   </div>
                 </Link>
                 <h2 className='notebooks__title'>{notebook.title}</h2>
-                {/* <NotebookFormModal notebook={notebook} />
+                <NotebookFormModal notebook={notebook} />
                 <button onClick={() => handleClickDelete(notebook.id)} className='notebooks__button'>
                   <i className="fas fa-trash" />
-                </button> */}
+                </button>
               </div>
             )
           }
@@ -53,12 +53,14 @@ const SearchList = ({ notebooks = [], notes = [] }) => {
                   <div className='notes__title'>{note.title}</div>
                   <div className='notes__content'>{note.content}</div>
                 </div>
-                <div>
+                <div className='notes__bottom-container'>
                   <div className='notes__date'>{calcDate(note.updatedAt)}</div>
-                  <EditNoteFormModal note={note} />
-                  {/* <button onClick={() => handleClickDelete(note.id)}>
-                    <i className="fas fa-trash" />
-                  </button> */}
+                  <div>
+                    <EditNoteFormModal note={note} />
+                    <button onClick={() => handleClickDelete(note.id)} className='notes__button'>
+                      <i className="fas fa-trash" />
+                    </button>
+                  </div>
                 </div>
               </div>
             )

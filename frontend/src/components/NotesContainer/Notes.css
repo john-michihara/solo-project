@@ -59,6 +59,7 @@
 .notes__date {
   color: rgba(0, 0, 0, 0.5);
   font-size: 12px;
+  vertical-align: text-bottom;
 }
 /*
 @keyframes stretch {
@@ -71,3 +72,19 @@
     width: 200px;
   }
 } */
+
+.notes__button {
+  border: none;
+  background-color: transparent;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.notes__button:hover {
+  background-color: transparent
+}
+
+.notes__bottom-container {
+  display: flex;
+  justify-content: space-between;
+}

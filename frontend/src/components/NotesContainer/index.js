@@ -57,12 +57,14 @@ const NotesContainer = () => {
               <div className='notes__title'>{note.title}</div>
               <div className='notes__content'>{note.content}</div>
             </div>
-            <div>
+            <div className='notes__bottom-container'>
               <div className='notes__date'>{calcDate(note.updatedAt)}</div>
-              <EditNoteFormModal note={note} />
-              <button onClick={() => handleClickDelete(note.id)}>
-                <i className="fas fa-trash" />
-              </button>
+              <div>
+                <EditNoteFormModal note={note} />
+                <button onClick={() => handleClickDelete(note.id)} className='notes__button'>
+                  <i className="fas fa-trash" />
+                </button>
+              </div>
             </div>
           </div>
         ))}

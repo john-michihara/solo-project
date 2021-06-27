@@ -8,7 +8,7 @@ function NoteFormModal() {
 
   return (
     <>
-      <button onClick={() => setShowModal(true)} className='notes__button'>
+      <button onClick={() => setShowModal(true)} className='notes__add-button'>
         + Note
       </button>
       {showModal && (

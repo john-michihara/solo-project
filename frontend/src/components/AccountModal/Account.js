@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import * as sessionActions from '../../store/session';
 import './Account.css';
 
-function Account({ user }) {
+function Account({ user, setShowModal }) {
   const dispatch = useDispatch();
   const history = useHistory();
 
