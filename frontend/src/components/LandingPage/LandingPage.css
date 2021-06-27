@@ -1,0 +1,20 @@
+.landing__container {
+  display: flex;
+  flex-direction: column;
+  height: 40vh;
+}
+
+.landing__header {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.landing__icon {
+  width: 30px;
+  margin-right: 10px;
+}
+
+.landing__title {
+  font-size: 20px;
+}
