@@ -72,10 +72,11 @@
 
 .notebooks__edit {
   position: relative;
-  bottom: 220px;
-  left: 100px;
+  bottom: 70px;
+  left: 65px;
   border: none;
   background-color: transparent;
   color: white;
   font-size: 30px;
+  cursor: pointer;
 }

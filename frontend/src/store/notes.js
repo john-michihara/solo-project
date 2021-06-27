@@ -41,6 +41,8 @@ export const getAllNotes = (userId) => async (dispatch) => {
   const res = await csrfFetch(`/api/users/${userId}/notes`);
   const notes = await res.json();
   dispatch(setAllNotes(notes));
+  console.log(notes);
+  return notes;
 };
 
 export const createNote = (noteData) => async (dispatch) => {

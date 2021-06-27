@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useParams } from 'react-router-dom';
+import { useDispatch } from "react-redux";
 import { getNoteToEdit } from '../../store/notes';
 import '../NoteFormModal/NoteForm.css';
 
-function EditNoteForm({ note }) {
+function EditNoteForm({ note, setShowModal }) {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
@@ -22,6 +21,7 @@ function EditNoteForm({ note }) {
     e.preventDefault();
     const noteData = { title, content, color, id: note.id };
     await dispatch(getNoteToEdit(noteData));
+    setShowModal(false);
   };
 
   return (

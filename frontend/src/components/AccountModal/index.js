@@ -22,7 +22,7 @@ function AccountModal({ user }) {
       </div>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <Account user={user} />
+          <Account user={user} setShowModal={setShowModal} />
         </Modal>
       )}
     </>

@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import * as sessionActions from '../../store/session';
 import './Account.css';
 
-function Account({ user }) {
+function Account({ user, setShowModal }) {
   const dispatch = useDispatch();
   const history = useHistory();
 

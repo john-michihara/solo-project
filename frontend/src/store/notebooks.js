@@ -29,6 +29,7 @@ export const getNotebooks = (userId) => async (dispatch) => {
   const res = await csrfFetch(`/api/users/${userId}/notebooks`);
   const notebooks = await res.json();
   dispatch(setNotebooks(notebooks));
+  return notebooks;
 };
 
 export const createNotebook = (userId) => async (dispatch) => {

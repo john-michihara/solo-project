@@ -22,7 +22,7 @@ function NotebookFormModal({ notebook }) {
       </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <NotebookForm notebook={notebook} />
+          <NotebookForm notebook={notebook} setShowModal={setShowModal} />
         </Modal>
       )}
     </>

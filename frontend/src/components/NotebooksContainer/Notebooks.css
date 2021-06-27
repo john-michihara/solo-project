@@ -90,10 +90,11 @@
 
 .notebooks__button {
   position: relative;
-  bottom: 180px;
+  bottom: 70px;
   left: 60px;
   border: none;
   background-color: transparent;
   color: white;
   font-size: 30px;
+  cursor: pointer;
 }

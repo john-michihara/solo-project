@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useHistory } from 'react-router-dom';
 import { getNotes, getNoteToDelete } from '../../store/notes';
 import NoteFormModal from '../NoteFormModal';
 import EditNoteFormModal from '../EditNoteFormModal';
@@ -10,11 +10,14 @@ import { getNotebooks } from "../../store/notebooks";
 
 const NotesContainer = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const notes = useSelector(state => Object.values(state.notes));
   const notebooks = useSelector(state => state.notebooks);
   const { notebookId } = useParams();
   const notebook = notebooks[notebookId];
-  const user = useSelector(state => state.session.user)
+  const user = useSelector(state => state.session.user);
+
+  if (!user) history.push('/');
 
   notes.sort(function (a, b) {
     if (a.updatedAt < b.updatedAt) return 1;
@@ -57,12 +60,14 @@ const NotesContainer = () => {
               <div className='notes__title'>{note.title}</div>
               <div className='notes__content'>{note.content}</div>
             </div>
-            <div>
+            <div className='notes__bottom-container'>
               <div className='notes__date'>{calcDate(note.updatedAt)}</div>
-              <EditNoteFormModal note={note} />
-              <button onClick={() => handleClickDelete(note.id)}>
-                <i className="fas fa-trash" />
-              </button>
+              <div>
+                <EditNoteFormModal note={note} />
+                <button onClick={() => handleClickDelete(note.id)} className='notes__button'>
+                  <i className="fas fa-trash" />
+                </button>
+              </div>
             </div>
           </div>
         ))}
