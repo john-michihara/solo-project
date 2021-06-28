@@ -1,0 +1,36 @@
+.login__form {
+  display: flex;
+  flex-direction: column;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.login__credential {
+  display: block;
+  border: 1px solid rgb(214, 214, 214);
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  padding: 3px;
+}
+
+.login__password {
+  display: block;
+  border: 1px solid rgb(214, 214, 214);
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  padding: 3px;
+}
+
+.login__submit-btn {
+  background-color: #1ebea6;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.login__submit-btn:hover {
+  background-color: #26d4ba;
+}

@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { createNote } from '../../store/notes';
 import './NoteForm.css';
 
-function NoteForm() {
+function NoteForm({ setShowModal }) {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
@@ -33,6 +33,7 @@ function NoteForm() {
     e.preventDefault();
     const noteData = { title, content, notebookId, userId, color };
     await dispatch(createNote(noteData));
+    setShowModal(false);
   };
 
   return (

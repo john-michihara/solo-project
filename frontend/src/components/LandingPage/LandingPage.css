@@ -1,7 +1,38 @@
 .landing__container {
   display: flex;
   flex-direction: column;
-  height: 40vh;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(245, 245, 245);
+}
+
+.landing__card {
+  background-color: white;
+  width: 80%;
+  height: 80%;
+  border-radius: 10px;
+  display: flex;
+}
+
+.landing__card-left {
+  width: 60%;
+  height: 100%;
+  border-radius: 10px;
+  display: flex;
+
+}
+
+.landing__card-right {
+  width: 40%;
+  height: 100%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .landing__header {
@@ -11,10 +42,35 @@
 }
 
 .landing__icon {
-  width: 30px;
+  width: 70px;
   margin-right: 10px;
 }
 
 .landing__title {
-  font-size: 20px;
+  font-size: 40px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.landing__phrase {
+  color: gray;
+  margin: 10px 0 40px 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.landing__image {
+  width: 700px;
+}
+
+.landing__no-account {
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial;
+  align-items: center;
+}
+
+.landing__create-account {
+  color: #1ebea6;
+  margin: 10px 0 20px 0;
+  cursor: pointer;
 }
