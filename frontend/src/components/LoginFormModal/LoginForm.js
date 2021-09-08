@@ -23,7 +23,10 @@ function LoginForm() {
   const demoLoginHandler = () => {
     return dispatch(
       sessionActions.login({ credential: "demo@user.io", password: "password" })
-    );
+    ).catch(async (res) => {
+      const data = await res.json();
+      if (data && data.errors) setErrors(data.errors);
+    });
   };
 
   return (
