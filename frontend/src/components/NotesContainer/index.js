@@ -7,6 +7,8 @@ import "./Notes.css";
 import { getNotebooks } from "../../store/notebooks";
 import Note from "./Note";
 
+import { cleanNotesStore } from "../../store/notes";
+
 const NotesContainer = () => {
   const dispatch = useDispatch();
   const history = useHistory();
@@ -28,7 +30,9 @@ const NotesContainer = () => {
     dispatch(getNotes(notebookId));
     dispatch(getNotebooks(user.id));
 
-    return () => {};
+    return () => {
+      dispatch(cleanNotesStore());
+    };
   }, [dispatch, notebookId, user]);
 
   return (
