@@ -1,47 +1,47 @@
-'use strict';
+"use strict";
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Notes', {
+    return queryInterface.createTable("Notes", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       userId: {
         type: Sequelize.INTEGER,
-        allowNull: false
+        allowNull: false,
       },
       notebookId: {
         type: Sequelize.INTEGER,
-        allowNull: false
+        allowNull: false,
       },
       title: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
       },
       content: {
-        type: Sequelize.TEXT,
+        type: Sequelize.JSON,
         allowNull: false,
-        defaultValue: ''
+        defaultValue: "",
       },
       color: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
       },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        defaultValue: Sequelize.fn('now')
+        defaultValue: Sequelize.fn("now"),
       },
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        defaultValue: Sequelize.fn('now')
-      }
+        defaultValue: Sequelize.fn("now"),
+      },
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Notes');
-  }
+    return queryInterface.dropTable("Notes");
+  },
 };
