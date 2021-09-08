@@ -1,7 +1,7 @@
 .login__form {
   display: flex;
   flex-direction: column;
-  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .login__credential {
@@ -22,15 +22,16 @@
   padding: 3px;
 }
 
-.login__submit-btn {
+.login__btn {
   background-color: #1ebea6;
   padding: 10px;
   border: none;
   border-radius: 10px;
   color: white;
   cursor: pointer;
+  margin-bottom: 10px;
 }
 
-.login__submit-btn:hover {
+.login__btn:hover {
   background-color: #26d4ba;
 }
