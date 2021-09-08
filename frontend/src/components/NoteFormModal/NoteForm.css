@@ -49,6 +49,7 @@
   border: none;
   background-color: transparent;
   padding: 10px;
+  cursor: pointer;
 }
 
 .note-form__submit-button {

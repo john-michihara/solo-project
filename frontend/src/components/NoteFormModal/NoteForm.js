@@ -7,6 +7,25 @@ import { createNote } from "../../store/notes";
 import "quill/dist/quill.snow.css";
 import "./NoteForm.css";
 
+const colors = [
+  "#fad154",
+  "#85ecd9",
+  "#c4ffed",
+  "#dff590",
+  "#dae8f0",
+  "#ffed7e",
+  "#ffda21",
+  "#b3d9e6",
+  "#d1ebb8",
+  "#d1d9c9",
+  "#ffdb70",
+  "#e3e3e3",
+  "#d5e0e3",
+  "#ffc37d",
+  "#bfdac2",
+  "#ffffff",
+];
+
 const toolbar = [
   [{ header: [1, 2, 3, 4, 5, 6, false] }],
   [{ font: [] }],
@@ -39,31 +58,8 @@ function NoteForm({ setShowModal }) {
     return Math.floor(Math.random() * max);
   };
 
-  const getColor = () => {
-    const colors = [
-      "#fad154",
-      "#85ecd9",
-      "#c4ffed",
-      "#dff590",
-      "#dae8f0",
-      "#ffed7e",
-      "#ffda21",
-      "#b3d9e6",
-      "#d1ebb8",
-      "#d1d9c9",
-      "#ffdb70",
-      "#e3e3e3",
-      "#d5e0e3",
-      "#ffc37d",
-      "#bfdac2",
-      "#ffffff",
-    ];
-
-    return colors[getRandomInt(colors.length)];
-  };
-
   useEffect(() => {
-    setColor(getColor());
+    setColor(colors[getRandomInt(colors.length)]);
     setTitle("Title");
   }, []);
 

@@ -1,26 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from 'react-redux';
-import * as sessionActions from '../../store/session';
-import './Navigation.css';
+import { useDispatch } from "react-redux";
+import * as sessionActions from "../../store/session";
+import "./Navigation.css";
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
 
-  const openMenu = () => {
-    if (showMenu) return;
-    setShowMenu(true);
-  };
-
   useEffect(() => {
     if (!showMenu) return;
-
     const closeMenu = () => {
       setShowMenu(false);
     };
-
-    document.addEventListener('click', closeMenu);
-
+    document.addEventListener("click", closeMenu);
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
 
@@ -31,9 +23,6 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      {/* <div onClick={logout} className='nav__account-icon'>
-        {user ? user.username[0].toLowerCase() : '?'}
-      </div> */}
       {showMenu && (
         <ul className="profile-dropdown">
           <li>{user.username}</li>

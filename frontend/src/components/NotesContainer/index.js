@@ -27,7 +27,9 @@ const NotesContainer = () => {
   useEffect(() => {
     dispatch(getNotes(notebookId));
     dispatch(getNotebooks(user.id));
-  }, [dispatch]);
+
+    return () => {};
+  }, [dispatch, notebookId, user]);
 
   return (
     <>

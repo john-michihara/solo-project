@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
 import Quill from "quill";
 
 import { useDispatch } from "react-redux";
@@ -19,14 +19,9 @@ const toolbar = [
 
 function EditNoteForm({ note, setShowModal }) {
   const dispatch = useDispatch();
-  const [title, setTitle] = useState("");
+  const [title, setTitle] = useState(note.title);
   const [quill, setQuill] = useState("");
-  const [color, setColor] = useState("#ffffff");
-
-  useEffect(() => {
-    setColor(note.color);
-    setTitle(note.title);
-  }, []);
+  const [color, setColor] = useState(note.color);
 
   const wrapperRef = useCallback(
     (wrapper) => {

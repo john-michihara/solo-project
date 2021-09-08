@@ -33,7 +33,7 @@ const AllNotesContainer = () => {
       </div>
       <div className="notes__container">
         {notes.map((note) => (
-          <Note note={note} />
+          <Note note={note} key={note.id} />
         ))}
       </div>
     </>

@@ -19,16 +19,6 @@ const SearchPage = () => {
   const user = useSelector((state) => state.session.user);
   if (!user) history.push("/");
 
-  const fetchData = async () => {
-    const notebooksData = await dispatch(getNotebooks(user.id));
-    const notesData = await dispatch(getAllNotes(user.id));
-
-    setNotebooks(notebooksData);
-    setNotebooksDefault(notebooksData);
-    setNotes(notesData);
-    setNotesDefault(notesData);
-  };
-
   const updateInput = async (input) => {
     const filteredNotebooks = notebooksDefault.filter((notebook) => {
       return notebook.title.toLowerCase().includes(input.toLowerCase());
@@ -43,8 +33,15 @@ const SearchPage = () => {
   };
 
   useEffect(() => {
-    fetchData();
-  }, []);
+    (async () => {
+      const notebooksData = await dispatch(getNotebooks(user.id));
+      const notesData = await dispatch(getAllNotes(user.id));
+      setNotebooks(notebooksData);
+      setNotebooksDefault(notebooksData);
+      setNotes(notesData);
+      setNotesDefault(notesData);
+    })();
+  }, [user, dispatch]);
 
   return (
     <>
