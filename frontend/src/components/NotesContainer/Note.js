@@ -12,7 +12,8 @@ const Note = ({ note }) => {
   const [quillText, setQuillText] = useState();
   const [showModal, setShowModal] = useState(false);
 
-  const handleClickDelete = () => {
+  const handleClickDelete = (event) => {
+    event.stopPropagation();
     dispatch(getNoteToDelete(note.id));
   };
 
