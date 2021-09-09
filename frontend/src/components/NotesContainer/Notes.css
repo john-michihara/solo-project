@@ -33,7 +33,7 @@
   height: 200px;
   margin: 20px 30px;
   /* animation-name: stretch;
-  animation-duration: .3s;
+  animation-duration: 0.3s;
   animation-timing-function: ease-out;
   animation-delay: 0s;
   animation-iteration-count: 1; */
@@ -42,10 +42,11 @@
   justify-content: space-between;
   flex-direction: column;
   line-height: 25px;
+  cursor: pointer;
 }
 
 .notes__stop-overflow {
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 .notes__title {
@@ -81,7 +82,7 @@
 }
 
 .notes__button:hover {
-  background-color: transparent
+  background-color: transparent;
 }
 
 .notes__bottom-container {

@@ -58,6 +58,7 @@
   padding: none;
   font-size: 25px;
   color: black;
+  cursor: pointer;
 }
 
 .note-form__submit-button:hover {
