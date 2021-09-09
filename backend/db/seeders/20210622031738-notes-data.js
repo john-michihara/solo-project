@@ -367,7 +367,7 @@ module.exports = {
           userId: 1,
           notebookId: 1,
           title: "Portuguese Bean Soup",
-          content: {
+          content: JSON.stringify({
             ops: [
               {
                 attributes: {
@@ -639,7 +639,7 @@ module.exports = {
                 insert: "\n",
               },
             ],
-          },
+          }),
           color: "#ffc37d",
         },
 
@@ -647,7 +647,7 @@ module.exports = {
           userId: 1,
           notebookId: 1,
           title: "Spam Musubi",
-          content: {
+          content: JSON.stringify({
             ops: [
               {
                 attributes: {
@@ -840,7 +840,7 @@ module.exports = {
                   "\nNote: The spam can be easily cut with a spam cutter, which typically yields 10 thinner slices. You may also adjust the thickness of spam, and amount of rice to achieve your personal preference.\nThere are many variations off of this basic recipe. You may eliminate the shoyu glaze, add in sriracha. Many also add in a slice of fried egg into their musubi.\n",
               },
             ],
-          },
+          }),
           color: "#85ecd9",
         },
 
@@ -848,7 +848,7 @@ module.exports = {
           userId: 1,
           notebookId: 1,
           title: "Ultimate Laulau",
-          content: {
+          content: JSON.stringify({
             ops: [
               {
                 attributes: {
@@ -1109,7 +1109,7 @@ module.exports = {
                 insert: "\n",
               },
             ],
-          },
+          }),
           color: "#d1ebb8",
         },
       ],
