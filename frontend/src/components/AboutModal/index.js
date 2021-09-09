@@ -64,7 +64,7 @@ const AboutModal = () => {
                     - Notebook covers
                   </li>
                   <li>
-                    <a href="https://www.zoho.com/notebook/" target="_blank">
+                    <a href="https://www.flaticon.com/" target="_blank">
                       Flaticon
                     </a>{" "}
                     - Goat image and favicon
