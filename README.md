@@ -41,6 +41,8 @@ User passwords are hashed using [bcrypt.js](https://www.npmjs.com/package/bcrypt
 
 Users can create a notebook with a colorful cover. Covers can be changed through the update notebook section, where users can select a new cover or use their own custom image by providing the image's url.
 
+![Notebooks](https://i.ibb.co/BVD2xBW/evergoat-notebooks.gif)
+
 ### Notes
 
 Notes can be created inside of a notebook. Each note's color is randomly selected, but users can change the color in the editor. Users also have access to Quill's rich text editor toolbar, which provides formatting (font styling, text alignment, lists, etc.).
