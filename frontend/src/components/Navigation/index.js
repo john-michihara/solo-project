@@ -1,7 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
+
 import AccountModal from "../AccountModal";
+import AboutModal from "../AboutModal";
 import "./Navigation.css";
 
 function Navigation({ isLoaded }) {
@@ -33,6 +35,7 @@ function Navigation({ isLoaded }) {
             </NavLink>
           </div>
           <div className="nav__section3">
+            <AboutModal />
             <AccountModal user={sessionUser} />
           </div>
         </nav>

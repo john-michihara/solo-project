@@ -1,0 +1,86 @@
+.about__button {
+  background-color: white;
+  border: none;
+  margin-right: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.about__modal {
+  position: fixed;
+  background-color: white;
+  border-radius: 5px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  animation-duration: 0.4s;
+  animation-name: slideIn;
+}
+
+@keyframes slideIn {
+  from {
+    right: -100vh;
+  }
+
+  to {
+    right: 0;
+  }
+}
+
+.about__card {
+  width: 400px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.about__picture {
+  height: 70px;
+  width: 70px;
+  text-align: center;
+  vertical-align: middle;
+  color: white;
+  font-size: 54px;
+  border-radius: 10px;
+  margin: 80px 0 10px 0;
+}
+
+.about__picture > img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 10px;
+}
+
+.about__username {
+  font-weight: bold;
+}
+
+.about__details {
+  background-color: rgb(230, 230, 230);
+  height: 100%;
+}
+
+.about__links {
+  list-style: none;
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.about__icon {
+  font-size: 30px;
+  margin-right: 10px;
+  margin-bottom: 40px;
+}
+
+.about__thanks {
+  padding: 20px;
+}
+
+.about__thanks > h2 {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.about__thanks-list {
+  list-style: none;
+}
