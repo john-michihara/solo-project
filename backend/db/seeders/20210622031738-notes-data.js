@@ -10,7 +10,7 @@ module.exports = {
           userId: 1,
           notebookId: 1,
           title: "Crispy Gau Gee",
-          content: {
+          content: JSON.stringify({
             ops: [
               {
                 attributes: {
@@ -193,7 +193,7 @@ module.exports = {
                 insert: "\n",
               },
             ],
-          },
+          }),
           color: "#fffcb3",
         },
 
@@ -201,7 +201,7 @@ module.exports = {
           userId: 1,
           notebookId: 1,
           title: "Meat Jun",
-          content: {
+          content: JSON.stringify({
             ops: [
               {
                 attributes: {
@@ -359,7 +359,7 @@ module.exports = {
                 insert: "Flour meat, dip in beaten eggs, and pan fry in oil.\n",
               },
             ],
-          },
+          }),
           color: "#ff9e9e",
         },
 
