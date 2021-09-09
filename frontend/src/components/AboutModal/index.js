@@ -65,6 +65,12 @@ const AboutModal = () => {
                   </li>
                   <li>
                     <a href="https://www.zoho.com/notebook/" target="_blank">
+                      Flaticon
+                    </a>{" "}
+                    - Goat image and favicon
+                  </li>
+                  <li>
+                    <a href="https://www.zoho.com/notebook/" target="_blank">
                       Zoho Notebook
                     </a>{" "}
                     - Cloned application
