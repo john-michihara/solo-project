@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
-import "./SignupForm.css";
+import classes from "./SignupForm.module.css";
 
 function SignupFormPage(props) {
   const dispatch = useDispatch();
@@ -33,7 +33,8 @@ function SignupFormPage(props) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={classes.form}>
+      <h2>Sign up</h2>
       <ul>
         {errors.map((error, idx) => (
           <li key={idx}>{error}</li>

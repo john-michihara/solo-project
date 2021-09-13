@@ -1,0 +1,41 @@
+.form {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  padding: 20px;
+  border-radius: 5px;
+  position: fixed;
+  top: 30vh;
+  left: 40vw;
+}
+
+.form h2 {
+  font-size: 26px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.form input {
+  display: block;
+  margin-bottom: 10px;
+  border: 1px solid rgb(214, 214, 214);
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 3px;
+}
+
+.form button {
+  background-color: #1ebea6;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.form button:hover {
+  background-color: #26d4ba;
+}
